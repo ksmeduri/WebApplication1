@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: imgnm1 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: imgnm1
+  template:
+    metadata:
+      labels:
+        app: imgnm1 
+    spec:
+      containers:
+        - name: imgnm1 
+          image: regnm1.azurecr.io/imgnm1
+          ports:
+          - containerPort: 1554
